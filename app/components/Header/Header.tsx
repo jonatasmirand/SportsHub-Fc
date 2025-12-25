@@ -18,6 +18,14 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function handleBackToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    resetTeam();
+  }
+
   return (
     <>
       <div className={styles.header}>
@@ -27,7 +35,6 @@ export default function Header() {
           </h1>
 
           <div className={styles.busca}>
-              
             <input
               type="text"
               placeholder="Digite o time"
@@ -36,7 +43,13 @@ export default function Header() {
               onKeyDown={(e) => e.key === "Enter" && searchTeam()}
               className={styles.searchInput}
             />
-            <button className={styles.searchIcon} onClick={searchTeam}>🔍</button>
+            <button
+              className={styles.searchIcon}
+              onClick={searchTeam}
+              aria-label="Buscar time"
+            >
+              🔍
+            </button>
           </div>
         </nav>
       </div>
@@ -44,17 +57,23 @@ export default function Header() {
       <div className={styles.subMenu}>
         <ul className={styles.subMenuList}>
           <Link href="/" onClick={resetTeam}>
-            <li className={`${styles.subItem}`}>Home</li>
+            <li className={styles.subItem}>Home</li>
           </Link>
+
           <Link href="/#news">
             <li className={styles.subItem}>Notícias</li>
-          </Link>        </ul>
+          </Link>
+        </ul>
       </div>
 
       {showBackToTop && (
-        <Link href="/" className={styles.backToTop}>
+        <button
+          onClick={handleBackToTop}
+          className={styles.backToTop}
+          aria-label="Voltar ao topo"
+        >
           ↑
-        </Link>
+        </button>
       )}
     </>
   );

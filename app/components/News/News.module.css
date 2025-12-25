@@ -1,5 +1,4 @@
-
-.title{
+.title {
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
@@ -10,12 +9,21 @@
     justify-content: center;
 }
 
+/* ============================= */
+/* GRID DE NOTÍCIAS */
+/* ============================= */
+
 .newsCard {
     list-style: none;
     padding: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 20px;
+
+    /* ✅ CENTRALIZAÇÃO */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .newsItem {
@@ -59,35 +67,36 @@
     color: inherit;
 }
 
+/* ============================= */
+/* 💻 TABLET */
+/* ============================= */
+
 @media (max-width: 1024px) {
-    .container {
-        padding: 18px;
+    .newsCard {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 24px;
     }
 
     .newsImage {
-        height: 160px;
+        height: 220px;
     }
 }
 
 /* ============================= */
 /* 📱 MOBILE */
 /* ============================= */
+
 @media (max-width: 768px) {
-    .page {
-        padding-top: 110px;
-    }
-
-    .container {
-        padding: 16px;
-    }
-
     .title {
         font-size: 1.5rem;
+        padding: 24px 16px;
     }
 
-    .newsList {
+    .newsCard {
         grid-template-columns: 1fr;
         gap: 16px;
+        padding: 20px;
+        justify-content: center;
     }
 
     .newsImage {
@@ -98,6 +107,10 @@
         font-size: 1.05rem;
     }
 }
+
+/* ============================= */
+/* 📱 MOBILE PEQUENO */
+/* ============================= */
 
 @media (max-width: 480px) {
     .newsImage {
