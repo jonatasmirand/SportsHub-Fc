@@ -1,0 +1,26 @@
+.page {
+    min-height: 100vh;
+    background: linear-gradient(125deg, #e3e4e4, #9ba1a3, #494b4b);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.8rem;
+}
+
+.loading {
+    font-size: 1rem;
+}   
+
+.empty {
+    max-width: 400px;
+    margin: 0 auto 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

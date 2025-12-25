@@ -1,0 +1,13 @@
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+}
+
+.text {
+    font-size: 0.9rem;
+}
+
+.author {
+    font-weight: 600;
+}
