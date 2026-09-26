@@ -54,8 +54,11 @@ export default function Destaques({ news }: DestaquesProps) {
                     {news.map((_, index) => (
                         <button
                             key={index}
+                            type="button"
                             className={`${styles.dot} ${index === current ? styles.active : ""
                                 }`}
+                            aria-label={`Ver destaque ${index + 1}`}
+                            aria-current={index === current}
                             onClick={() => setCurrent(index)}
                         />
                     ))}

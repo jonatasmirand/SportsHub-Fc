@@ -1,7 +1,93 @@
 @import "tailwindcss";
 
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@theme {
+  --color-brand-900: #052e16;
+  --color-brand-800: #0b5d2c;
+  --color-brand-700: #0f7a3a;
+  --color-brand-600: #005c22;
+  --color-brand-500: #22c55e;
+
+  --color-surface-900: #18181b;
+  --color-surface-700: #494b4b;
+  --color-surface-500: #9ba1a3;
+  --color-surface-100: #e3e4e4;
+
+  --color-ink-900: #151719;
+  --color-ink-500: #a1a1aa;
+  --color-ink-50: #fafafa;
+
+  --font-display: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  --radius-card: 12px;
+  --radius-highlight: 18px;
+
+  --shadow-card: 0 6px 18px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 28px rgba(0, 0, 0, 0.45);
+
+  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-ui: 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--color-ink-900);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-brand-500);
+  color: var(--color-brand-900);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brand-700) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-700);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-800);
+}
+
+img {
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
