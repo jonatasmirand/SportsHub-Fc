@@ -1,13 +1,22 @@
 .footer {
     width: 100%;
     text-align: center;
-    padding: 50px;
+    padding: 32px 16px;
+    color: var(--color-ink-900);
 }
 
 .text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .author {
     font-weight: 600;
+    color: var(--color-brand-900);
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 50px;
+    }
 }
